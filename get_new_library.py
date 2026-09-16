@@ -136,7 +136,7 @@ try:
     if response.status_code == 200:
             # Parse the JSON response
             results = response.json()
-            with open(output_file, "a") as file:
+            with open(output_file, "w") as file:
                 writer = csv.DictWriter(file, fieldnames = ["entry"])
                 writer.writeheader()
                 for result in results['result_set']:
